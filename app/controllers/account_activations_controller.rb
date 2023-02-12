@@ -1,3 +1,4 @@
+# typed: false
 class AccountActivationsController < ApplicationController
 
   def edit

@@ -1,3 +1,4 @@
+# typed: false
 class Micropost < ApplicationRecord
   belongs_to       :user
 
