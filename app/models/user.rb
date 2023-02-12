@@ -1,4 +1,4 @@
-# typed: false
+# typed: true
 class User < ApplicationRecord
   has_many :microposts, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
@@ -21,14 +21,14 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   # Returns the hash digest of the given string.
-  def User.digest(string)
+  def self.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
 
   # Returns a random token.
-  def User.new_token
+  def self.new_token
     SecureRandom.urlsafe_base64
   end
 
@@ -82,7 +82,7 @@ class User < ApplicationRecord
 
   # Returns true if a password reset has expired.
   def password_reset_expired?
-    reset_sent_at < 2.hours.ago
+    T.must(reset_sent_at) < 2.hours.ago
   end
 
   # Returns a user's status feed.
@@ -113,7 +113,7 @@ class User < ApplicationRecord
 
     # Converts email to all lowercase.
     def downcase_email
-      self.email = email.downcase
+      self.email = T.must(email).downcase
     end
 
     # Creates and assigns the activation token and digest.
