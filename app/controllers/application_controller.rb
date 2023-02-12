@@ -1,4 +1,4 @@
-# typed: false
+# typed: true
 class ApplicationController < ActionController::Base
   include SessionsHelper
 

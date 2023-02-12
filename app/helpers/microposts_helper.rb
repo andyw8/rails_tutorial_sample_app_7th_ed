@@ -1,3 +1,3 @@
-# typed: false
+# typed: true
 module MicropostsHelper
 end
