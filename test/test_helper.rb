@@ -1,5 +1,6 @@
 # typed: false
 ENV["RAILS_ENV"] ||= "test"
+require "sorbet-runtime"
 require_relative "../config/environment"
 require "rails/test_help"
 require "minitest/reporters"
