@@ -1,3 +1,4 @@
+# typed: false
 class UserMailer < ApplicationMailer
 
   def account_activation(user)

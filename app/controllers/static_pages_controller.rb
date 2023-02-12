@@ -1,3 +1,4 @@
+# typed: false
 class StaticPagesController < ApplicationController
 
   def home
