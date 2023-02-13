@@ -1,16 +1,18 @@
-# typed: false
+# typed: true
 class SessionsController < ApplicationController
 
   def new
   end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
+    session_params = T.cast(params[:session], ActionController::Parameters)
+    email = T.cast(session_params[:email], String)
+    user = User.find_by(email: email.downcase)
+    if user && user.authenticate(T.cast(params[:session], ActionController::Parameters)[:password])
       if user.activated?
         forwarding_url = session[:forwarding_url]
         reset_session
-        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+        session_params[:remember_me] == '1' ? remember(user) : forget(user)
         log_in user
         redirect_to forwarding_url || user
       else
