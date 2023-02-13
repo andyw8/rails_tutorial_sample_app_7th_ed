@@ -26,7 +26,6 @@ class Rails::Conductor::BaseController
     include ::MicropostsHelper
     include ::PasswordResetsHelper
     include ::RelationshipsHelper
-    include ::SessionsHelper
     include ::StaticPagesHelper
     include ::UsersHelper
   end

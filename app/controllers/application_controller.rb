@@ -2,6 +2,9 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
 
+  # These methods are called from views AND controllers
+  helper_method :remember, :current_user, :current_user?, :logged_in?
+
   private
 
     # Confirms a logged-in user.
