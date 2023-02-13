@@ -1,4 +1,4 @@
-# typed: false
+# typed: true
 module SessionsHelper
 
   # Logs in the given user.
