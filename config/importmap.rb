@@ -1,5 +1,7 @@
-# typed: false
+# typed: true
 # Pin npm packages by running ./bin/importmap
+
+T.bind(self, Importmap::Map)
 
 pin "application", preload: true
 pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
