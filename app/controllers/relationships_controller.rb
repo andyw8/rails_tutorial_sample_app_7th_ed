@@ -1,4 +1,4 @@
-# typed: false
+# typed: true
 class RelationshipsController < ApplicationController
   before_action :logged_in_user
 
