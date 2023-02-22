@@ -1,7 +1,9 @@
 # typed: true
 class ApplicationController < ActionController::Base
   include SessionStuff
-  helper_method :logged_in?, :current_user, :current_user?, :remember
+
+  # These methods are called from views AND controllers
+  helper_method :remember, :current_user, :current_user?, :logged_in?
 
   private
 
