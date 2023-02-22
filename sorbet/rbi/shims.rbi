@@ -10,5 +10,4 @@ class ActionController::MimeResponds::Collector
 end
 
 module SessionsHelper
-  include ActionController::Cookies
 end
