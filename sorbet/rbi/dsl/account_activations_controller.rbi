@@ -23,9 +23,20 @@ class AccountActivationsController
     include ::MicropostsHelper
     include ::PasswordResetsHelper
     include ::RelationshipsHelper
-    include ::SessionsHelper
     include ::StaticPagesHelper
     include ::UsersHelper
+
+    sig { returns(T.untyped) }
+    def current_user; end
+
+    sig { params(user: T.untyped).returns(T.untyped) }
+    def current_user?(user); end
+
+    sig { returns(T.untyped) }
+    def logged_in?; end
+
+    sig { params(user: T.untyped).returns(T.untyped) }
+    def remember(user); end
   end
 
   class HelperProxy < ::ActionView::Base
