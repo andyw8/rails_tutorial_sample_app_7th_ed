@@ -1,6 +1,7 @@
 # typed: true
 class ApplicationController < ActionController::Base
-  include SessionsHelper
+  include SessionStuff
+  helper_method :logged_in?, :current_user, :current_user?, :remember
 
   private
 
