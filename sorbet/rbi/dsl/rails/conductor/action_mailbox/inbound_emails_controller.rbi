@@ -23,7 +23,6 @@ class Rails::Conductor::ActionMailbox::InboundEmailsController
     include ::MicropostsHelper
     include ::PasswordResetsHelper
     include ::RelationshipsHelper
-    include ::SessionsHelper
     include ::StaticPagesHelper
     include ::UsersHelper
   end

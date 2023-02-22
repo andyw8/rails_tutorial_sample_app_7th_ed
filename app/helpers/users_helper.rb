@@ -1,5 +1,8 @@
-# typed: false
+# typed: true
+
 module UsersHelper
+  extend T::Helpers
+  requires_ancestor { ActionView::Base }
 
   # Returns the Gravatar for the given user.
   def gravatar_for(user, options = { size: 80 })

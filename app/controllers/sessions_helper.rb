@@ -1,5 +1,7 @@
-# typed: false
+# typed: true
 module SessionsHelper
+  extend T::Helpers
+  requires_ancestor { ApplicationController }
 
   # Logs in the given user.
   def log_in(user)
