@@ -1,5 +1,5 @@
 # typed: true
-module SessionStuff
+module SessionsHelper
   extend T::Helpers
   requires_ancestor { ApplicationController }
 
