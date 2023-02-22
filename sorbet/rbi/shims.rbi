@@ -8,6 +8,3 @@ end
 class ActionController::MimeResponds::Collector
   include ::Turbo::StreamsHelper
 end
-
-module SessionsHelper
-end
