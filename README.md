@@ -18,7 +18,7 @@ See the invidual PRs for details of approach.
 
 * [Add types to app/models](https://github.com/andyw8/rails_tutorial_sample_app_7th_ed/pull/7)
 
-* [DSL setup](https://github.com/andyw8/rails_tutorial_sample_app_7th_ed/pull/8)
+* [Require sorbet-runtime](https://github.com/andyw8/rails_tutorial_sample_app_7th_ed/pull/8)
 
 * [Enable typechecking for configs](https://github.com/andyw8/rails_tutorial_sample_app_7th_ed/pull/9)
 
