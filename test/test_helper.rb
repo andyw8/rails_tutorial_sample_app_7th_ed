@@ -1,4 +1,4 @@
-# typed: false
+# typed: true
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
@@ -12,11 +12,6 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-
-  # Returns true if a test user is logged in.
-  def is_logged_in?
-    !session[:user_id].nil?
-  end
 end
 
 class ActionDispatch::IntegrationTest
@@ -26,5 +21,17 @@ class ActionDispatch::IntegrationTest
     post login_path, params: { session: { email: user.email,
                                           password: password,
                                           remember_me: remember_me } }
+  end
+
+  # Returns true if a test user is logged in.
+  def is_logged_in?
+    !session[:user_id].nil?
+  end
+end
+
+class ActionView::TestCase
+  # Returns true if a test user is logged in.
+  def is_logged_in?
+    !session[:user_id].nil?
   end
 end
